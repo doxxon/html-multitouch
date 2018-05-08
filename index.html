@@ -93,18 +93,26 @@
             //     $('#box4').addClass('highlight');
             // });
 
-            $('.box').each(function(){
-                $(this).on("click touchstart", function() {
-                  // Do things
-                  $(this).addClass('highlight');
-                  return false;
-                });
-                $(this).on("touchend", function() {
-                  // Do things
-                  $(this).removeClass('highlight');
-                  return false;
-                });
+            $('#box1').bind('touchstart', function() {
+                 $(this).addClass('highlight');
             });
+
+            $('#box1').bind('touchend', function() {
+                 $(this).removeClass('highlight');
+            });
+
+            // $('.box').each(function(){
+            //     $(this).on("click touchstart", function() {
+            //       // Do things
+            //       $(this).addClass('highlight');
+            //       return false;
+            //     });
+            //     $(this).on("touchend", function() {
+            //       // Do things
+            //       $(this).removeClass('highlight');
+            //       return false;
+            //     });
+            // });
 
         });
     </script>
