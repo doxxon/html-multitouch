@@ -57,30 +57,48 @@
     <body>
         <div class="container">
             <div id="box1" class="box blue"></div>
-            <div class="box green"></div>
-            <div class="box red"></div>
-            <div class="box yellow"></div>
+            <div id="box2" class="box green"></div>
+            <div id="box3" class="box red"></div>
+            <div id="box4" class="box yellow"></div>
         </div>
     </body>
     <script>
         $(function() {
-            $('.box').on("touchstart",function(){
-                $(this).addClass('highlight');
-            });
-
-            $('.box').mouseup(function(){
-                $(this).removeClass('highlight');
-            })
-
-            // var myElement = document.getElementById('myElement');
-
             // create a simple instance
             // by default, it only adds horizontal recognizers
-            var mc = new Hammer($('#box1'));
 
-            // listen to events...
-            mc.on("panleft panright tap press", function(ev) {
-                alert('asd');
+            // var box1 = new Hammer($('#box1').get(0));
+            // var box2 = new Hammer($('#box2').get(0));
+            // var box3 = new Hammer($('#box3').get(0));
+            // var box4 = new Hammer($('#box4').get(0));
+            //
+            // // listen to events...
+            // box1.on("panleft panright tap press", function(ev) {
+            //     $('#box1').addClass('highlight');
+            // });
+            //
+            // box1.on("pressup", function(ev) {
+            //     $('#box1').removeClass('highlight');
+            // });
+            //
+            // box2.on("panleft panright tap press", function(ev) {
+            //     $('#box2').addClass('highlight');
+            // });
+            //
+            // box3.on("panleft panright tap press", function(ev) {
+            //     $('#box3').addClass('highlight');
+            // });
+            //
+            // box4.on("panleft panright tap press", function(ev) {
+            //     $('#box4').addClass('highlight');
+            // });
+
+            $('.box').each(function(){
+                $(this).on("click touchstart", function() {
+                  // Do things
+                  $(this).addClass('highlight');
+                  return false;
+                });
             });
 
         });
