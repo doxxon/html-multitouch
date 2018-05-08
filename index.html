@@ -62,9 +62,10 @@
     </body>
     <script>
         $(function() {
-            $('.box').mousedown(function(){
+            $('.box').on("tap",function(){
                 $(this).addClass('highlight');
-            })
+            });
+            
             $('.box').mouseup(function(){
                 $(this).removeClass('highlight');
             })
