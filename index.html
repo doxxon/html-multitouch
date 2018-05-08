@@ -92,14 +92,22 @@
             // box4.on("panleft panright tap press", function(ev) {
             //     $('#box4').addClass('highlight');
             // });
-
-            $('#box1').bind('touchstart', function() {
-                 $(this).addClass('highlight');
+            $('.box').each(function(){
+                $(this).bind('touchstart', function() {
+                     $(this).addClass('highlight');
+                });
             });
 
-            $('#box1').bind('touchend', function() {
-                 $(this).removeClass('highlight');
+            $('.box').each(function(){
+                $(this).bind('touchend', function() {
+                     $(this).removeClass('highlight');
+                });
             });
+
+
+            // $('#box1').bind('touchend', function() {
+            //      $(this).removeClass('highlight');
+            // });
 
             // $('.box').each(function(){
             //     $(this).on("click touchstart", function() {
